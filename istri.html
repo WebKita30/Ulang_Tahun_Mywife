@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selamat Ulang Tahun Cintaku 🤍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --rose: #b23a48;
+        --soft: #4b2c2c;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+        overflow-x: hidden;
+      }
+
+      /* HEART */
+      .hearts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 999;
+      }
+      .heart {
+        position: absolute;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        from {
+          transform: translateY(-10vh);
+        }
+        to {
+          transform: translateY(110vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* HERO */
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+      .hero-box {
+        background: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(14px);
+        border-radius: 35px;
+        padding: 55px 40px;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+      }
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: var(--rose);
+      }
+      .hero p {
+        margin-top: 15px;
+        color: var(--soft);
+      }
+      .hero button {
+        margin-top: 35px;
+        padding: 16px 42px;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(135deg, #ff4b6e, #ff8fa3);
+        color: white;
+        cursor: pointer;
+        font-size: 1rem;
+        animation: heartbeat 1.5s infinite;
+      }
+      @keyframes heartbeat {
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      /* SECTION */
+      section {
+        display: none;
+        padding: 80px 20px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      /* STORY */
+      .story-card {
+        background: #fff5f5;
+        border-radius: 35px;
+        padding: 45px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      }
+      .story-card h2 {
+        font-family: "Playfair Display", serif;
+        text-align: center;
+        color: var(--rose);
+        font-size: 2.4rem;
+        margin-bottom: 30px;
+      }
+      .story-card p {
+        line-height: 1.9;
+        margin-bottom: 18px;
+        color: var(--soft);
+      }
+      .highlight {
+        color: var(--rose);
+        font-style: italic;
+      }
+
+      /* GALLERY */
+      .gallery {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 22px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      /* VIDEO */
+      .video-box {
+        margin-top: 60px;
+        background: white;
+        padding: 20px;
+        border-radius: 25px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+      }
+      video {
+        width: 100%;
+        max-height: 320px;
+        border-radius: 18px;
+        background: black;
+      }
+
+      /* FOOTER */
+      .footer {
+        display: none;
+        text-align: center;
+        padding: 70px 20px;
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        color: var(--rose);
+      }
+
+      /* RESPONSIVE HP */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .story-card {
+          padding: 28px 22px;
+        }
+        .story-card h2 {
+          font-size: 2rem;
+        }
+        .story-card p {
+          font-size: 0.95rem;
+        }
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+        .gallery img {
+          height: 220px;
+        }
+        video {
+          max-height: 260px;
+        }
+        .footer {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hearts" id="hearts"></div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-box">
+        <h1>Selamat Ulang Tahun Sayangku 🤍</h1>
+        <p>Ada hadiah kecil dari hati aku, khusus untuk kamu</p>
+        <button onclick="bukaCerita()">Buka Cerita Kita 💕</button>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <section id="cerita">
+      <div class="container">
+        <div class="story-card">
+          <h2>Cerita Kita</h2>
+<p>
+  Hallo cantiknya aku, apa kabar? Semoga kamu selalu sehat ya sayang di sana.
+  Mungkin kamu bakal bilang ini alay, gapapa. Aku bikin ini bukan buat main-main,
+  tapi karena aku tulus dari hati. Panjang umur dan sehat selalu buat istri aku
+  yang paling cantik. I love you, sayang.
+</p>
+
+<p>
+  Pertama-tama, aku benar-benar dari hati mau
+  <span class="highlight">minta maaf</span> kalau selama ini ada sikap,
+  perkataan, atau keputusan aku yang sengaja atau tidak sengaja
+  bikin kamu sakit.
+</p>
+
+<p>
+  Inget gak sayang, hubungan kita tuh udah
+  <span class="highlight">jauh banget</span>.
+  Aku mohon jangan kayak gini terus. Ayo pelan-pelan kita
+  <span class="highlight">perbaiki semuanya</span>, tanpa saling nyalahin.
+</p>
+
+<p>
+  Aku jujur ya, aku pengen perbaiki semuanya dengan cara yang baik,
+  <span class="highlight">tanpa ada orang ketiga lagi</span>.
+  Aku cuma pengen hidup sederhana, menua bareng kamu,
+  sama-sama jaga dan bahagiain neng.
+</p>
+
+<p>
+  Tujuan aku sederhana, cuma pengen kita
+  <span class="highlight">bahagia sebagai rumah tangga</span>
+  dan jadi orang tua yang utuh buat anak kita.
+</p>
+
+<p>
+  Dulu kita <span class="highlight">bucin parah</span>.
+  Kamu ke Alfa, kita kehujanan, lewat jembatan gantung
+  pas mau ke rumah aku. Capek, tapi bahagia.
+</p>
+
+<p>
+  Di kampus kita selalu bercanda, kamu ngebecandain aku
+  setelah ujian Mikrotik. Sampai sekarang,
+  kenangan itu masih bikin aku senyum sendiri.
+</p>
+
+<p>
+  Sahur bareng, buka bareng, jajan bareng.
+  Tukang cilung, timbel, sampai Bu Yeti selalu nanyain kita.
+  Banyak yang iri sama hubungan kita, tapi waktu itu
+  kita fokus <span class="highlight">bahagia bareng</span>.
+</p>
+
+<p>
+  Kita sudah lewatin susah dan senang sampai menikah.
+  Dan aku pengen ngerasain itu lagi,
+  tapi sekarang dalam
+  <span class="highlight">konteks pernikahan</span>
+  yang lebih dewasa dan saling jaga.
+</p>
+
+<p>
+  Di ulang tahun kamu hari ini, aku cuma mau bilang:
+  terima kasih sudah jadi bagian paling penting
+  dalam hidup aku.
+</p>
+
+<p>
+  <span class="highlight">Aku sayang kamu</span>,
+  aku cinta kamu,
+  dan aku masih ingin masa depan aku & neng
+  itu selalu ada kamu di dalamnya.
+</p>
+
+
+        <!-- GALERI -->
+        <div class="gallery">
+          <img src="image/foto1.jpeg" />
+          <img src="image/foto2.jpeg" />
+          <img src="image/foto3.jpeg" />
+        </div>
+
+        <!-- VIDEO -->
+        <div class="video-box">
+          <video controls playsinline preload="auto">
+            <source src="vidio/vidio1.mp4" type="video/mp4" />
+            Video tidak bisa diputar
+          </video>
+        </div>
+
+        <div class="video-box">
+          <video controls playsinline preload="auto">
+            <source src="vidio/vidio2.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer" class="footer">
+      Aku akan selalu menunggu kamu Istriku yang cantik 🤍
+    </div>
+
+    <script>
+      const hearts = document.getElementById("hearts");
+
+      function createHeart() {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.fontSize = 14 + Math.random() * 26 + "px";
+        h.style.animationDuration = 6 + Math.random() * 6 + "s";
+        hearts.appendChild(h);
+        setTimeout(() => h.remove(), 12000);
+      }
+
+      function bukaCerita() {
+        document.getElementById("cerita").style.display = "block";
+        document.getElementById("footer").style.display = "block";
+        setInterval(createHeart, 300);
+        window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
